@@ -1,0 +1,11 @@
+# Archivos de configuración de IntelliJ
+.idea/
+
+# Archivos de compilación
+out/
+
+# Archivos de dependencias y librerías
+lib/
+
+# Archivos de configuración de Maven
+target/
