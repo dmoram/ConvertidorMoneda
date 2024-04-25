@@ -1,6 +1,6 @@
 package com.dmoram.componentes;
 
-import com.dmoram.modelos.Conversion;
+import com.dmoram.modelos.ConversionAPI;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -10,8 +10,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConsultaAPI {
-    public static Conversion hacerConversion(String monedaOrigen, String monedaDestino, double monto){
-        URI url = URI.create("https://api.fastforex.io/convert?api_key=fa2bb11ff3-5e488c368f-sc87h3&from="+monedaOrigen+"&to="+monedaDestino+"&amount="+monto);
+    public static ConversionAPI hacerConversion(String monedaOrigen, String monedaDestino, double monto){
+        URI url = URI.create("https://v6.exchangerate-api.com/v6/1826aa3615f676f0c293935e/pair/"+monedaOrigen+"/"+monedaDestino+"/"+monto);
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest  request = HttpRequest.newBuilder().uri(url).build();
         HttpResponse<String> response = null;
@@ -23,6 +23,6 @@ public class ConsultaAPI {
             System.out.println("Ha ocurrido un problema");
         }
         System.out.println(response.body());
-        return new Gson().fromJson(response.body(), Conversion.class);
+        return new Gson().fromJson(response.body(), ConversionAPI.class);
     }
 }
