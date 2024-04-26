@@ -13,13 +13,16 @@ public class Conversion {
         montoConvertido = convAPI.conversion_result();
     }
 
+    public double getMontoConvertido() {
+        return montoConvertido;
+    }
+
     @Override
     public String toString() {
-        return "Conversion{" +
-                ", monedaOrigen='" + monedaOrigen + '\'' +
-                ", monedaDestino='" + monedaDestino + '\'' +
-                ", montoInicial=" + montoInicial +
-                ", montoConvertido=" + montoConvertido +
-                '}';
+        return STR."""
+                Conversión \{monedaOrigen} => \{monedaDestino}
+                Monto Inicial: \{montoInicial}
+                Monto Convertido \{montoConvertido}
+                """;
     }
 }

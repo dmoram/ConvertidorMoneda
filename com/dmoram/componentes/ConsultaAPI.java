@@ -22,7 +22,7 @@ public class ConsultaAPI {
         } catch (Exception e){
             System.out.println("Ha ocurrido un problema");
         }
-        System.out.println(response.body());
+        assert response != null;
         return new Gson().fromJson(response.body(), ConversionAPI.class);
     }
 }

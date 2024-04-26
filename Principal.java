@@ -57,6 +57,7 @@ public class Principal {
                         break;
                     case 7:
                         System.out.println(registro);
+                        System.out.println();
                         break;
                     default:
                         System.out.println("¡Opción inválida! Por favor, ingrese un número entre 0 y 7.");
@@ -74,12 +75,13 @@ public class Principal {
         double monto;
         String continuar;
         do {
+            System.out.println(STR."Conversión \{monedaOrigen} => \{monedaDestino}");
             System.out.print("Ingrese monto a convertir: ");
             monto = teclado.nextDouble();
             ConversionAPI convAPI = ConsultaAPI.hacerConversion(monedaOrigen, monedaDestino, monto);
             Conversion conv = new Conversion(convAPI, monto);
             registro.agregarRegistro(conv);
-
+            System.out.println(STR."Monto convertido: $\{conv.getMontoConvertido()} \{monedaDestino}");
             System.out.print("¿Desea realizar otra conversión? (si o no): ");
             continuar = teclado.next().toLowerCase();
         } while (continuar.equals("si"));
