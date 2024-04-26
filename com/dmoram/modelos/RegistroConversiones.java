@@ -9,7 +9,7 @@ public class RegistroConversiones {
         listaConversiones = new ArrayList<Conversion>();
     }
 
-    public void añadirRegistro(Conversion conversion){
+    public void agregarRegistro(Conversion conversion){
         listaConversiones.add(conversion);
     }
 
